@@ -1,11 +1,11 @@
  cMonkey biclustering R scripts, version 1.1
 ========
-
+```
  Thu Dec  8 18:19:55 PST 2005
  Authors: David J. Reiss, ISB    (c) 2005-2006
           Richard Bonneau, ISB
  http://halo.systemsbiology.org/cmonkey
-
+```
 
  This code is available for non-profit use only, free to be used and modified.
  If results derived using this method are published, please cite:
@@ -28,9 +28,11 @@
        (http://metameme.sdsc.edu/mhmm-download.html)
  4. Create links to "meme" and "mast" from within the "progs/" directory.
  5. Start R, and in the R environment:
+```
  6. >   install.packages("brlr",repos="http://cran.r-project.org") ## install brlr pkg if not installed
  7. >   load("cMonkey_v1.1_source.RData")  load all cMonkey code
  8. >   run()   enter organism to run on
+```
 
  NOTES:
  A. Ignore all warning messages printed to the screen - only worry if it dies with an error.
@@ -42,16 +44,22 @@
      output/ORGANISM directory.
  D. At any time you may plot a bicluster (e.g. 2) by typing (in R, after running 
      step 7 above):
+```
     >   start.up(); load.latest(); plotCluster.motif( clusterStack[[2]] )
+```
  E. Or, to plot them all to a PDF, instead of the "plotCluster.motif()" function, type:
+```
     >   plot.clusters( clusterStack )  PDF is placed in output/ORGANISM
+```
 
  ADVANCED USAGE: if you want to adjust the cMonkey parameters, between steps (7) and (8)
                  above, insert:
+```
  a. >   start.up(); detach( params )   ## enter the organism to run on
  b. *  change the parameter that you wish to modify in the "params" list; e.g.
        > params$kmax <- 100   ## sets the number of clusters to be learned
  c. >   attach( params )
+```
 
  OTHER ORGANISMS: if you wish to use cMonkey on your own data for another organism,
     you need to inspect the "global.data" data structure, and replace the sub-structures
