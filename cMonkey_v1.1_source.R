@@ -268,7 +268,7 @@ function (rows, row.gains, all.names = get.global("gene.ids"),
     return(resp)
 }
 gen.clust <-
-function (rowNames, colNames, ratios, n.motifs = 3, fill = F) 
+function (rowNames, colNames, ratios, n.motifs = 2, fill = F) 
 {
     c.tmp <- list()
     rowNames <- rowNames[which(rowNames %in% rownames(ratios))]
@@ -1859,7 +1859,7 @@ function (rows1, rows2)
     return(overlap12)
 }
 params <-
-structure(list(rnd.seed = 2, n.iters = 100, kmax = 300, stdRatios = TRUE, 
+structure(list(rnd.seed = 2, n.iters = 100, kmax = 400, stdRatios = TRUE, 
     semirnd.clust.size = 30, ratios.thresh = 0.5, ratios.n.thresh = 10, 
     iter.resid.scaling = 1, r.sig = 0.3, iter.bad.move.temperature = structure(c(0.15, 
     0.148989898989899, 0.147979797979798, 0.146969696969697, 
@@ -1940,7 +1940,7 @@ structure(list(rnd.seed = 2, n.iters = 100, kmax = 300, stdRatios = TRUE,
     "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", 
     "78", "79", "80", "81", "82", "83", "84")), iter.min.unique.seqs = 3, 
     iter.max.unique.seqs = 200, iter.n.motifs = structure(c(1, 
-    2, 3), .Names = c("1", "25", "40")), iter.min.motif.width = 9, 
+    2, 2), .Names = c("1", "25", "40")), iter.min.motif.width = 9, 
     iter.max.motif.width = 25, iter.seq.length = 250, iter.bg.order = 3, 
     iter.e.val.cutoff = structure(c(999999, 99999, 9999), .Names = c("1", 
     "25", "40")), iter.p.val.cutoff = structure(c(0.9, 0.9), .Names = c("1", 
@@ -3298,7 +3298,7 @@ function (clusterStack, ks = 1:get.global("kmax"), debug = F,
         cat.new(date(), "\n")
         cat.new("Optimizing these clusters:", inds, "\n")
         ll <- lapply(clusterStack[inds], test.opt.one.cluster, 
-            plot = T, plot.cluster = T, log = T, counts = counts, 
+            plot = F, plot.cluster = F, log = T, counts = counts, 
             mean.count = mean.count, ...)
         for (ii in 1:length(ll)) {
             i <- inds[ii]
