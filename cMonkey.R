@@ -65,7 +65,7 @@
 ## 5. loading the snow-utils code (not included here)
 ## 4. editing the test.opt.all.clusters() function to uncomment the snow-related functions
 #########################################################
-## CONTACT for assistance: David J. Reiss, ISB -- dreiss@systemsbiology.org
+## CONTACT for assistance: David J. Reiss, ISB -- dreiss.isb@gmail.com.org
 #########################################################
 
 if ( ! exists( "iter" ) || is.na( iter ) ) iter <- 0
